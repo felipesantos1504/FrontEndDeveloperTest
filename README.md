@@ -12,6 +12,12 @@ Digite `npm start` para começar. O browser será aberto automaticamente em `htt
 
 O guarda de rota está na pasta `guards` o `auth.guard.ts` ele depende de um serviço de autenticação que contem o token e retorna se o usuário está autenticado ou não a partir daí deixa o usuário navegar.
 
+## Padrão de escrita
+
+Sempre que possível seguir o style guide do angular para seguir o padrão e facilitar outros devs angular a entender o código, coisas como separar variáveis, métodos entre privados e públicos em ordem alfabética, não ultrapassar 700 linhas em um .ts, ter funções com até 70 linhas e por ai vai.
+
+* [Style Guide Angular](https://angular.io/guide/styleguide) - Angular.io
+
 ## Paths
 
 Ao adicionar modulos certifique-se de adicionar seu caminho aos paths do arquivo `tsconfig.json` para simplificar os caminhos dos imports.
