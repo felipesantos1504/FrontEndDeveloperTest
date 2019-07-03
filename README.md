@@ -10,14 +10,7 @@ Digite `npm start` para começar. O browser será aberto automaticamente em `htt
 
 ## Guard
 
-O guarda de rota está na pasta `guards` ele depende de um serviço de autenticação que contem o token e retorna se o usuário está autenticado ou não a partir daí deixa o usuário navegar.
-
-
-## HMR
-
-Esse app está configurado para utilizar o HMR (Hot Module Reload) para recarregar apenas os arquivos alterados não fazendo o reload da aplicação toda, assim preservando o seu estado ao alterar arquivos.
-
-* [Tutorial HMR](https://codinglatte.com/posts/angular/enabling-hot-module-replacement-angular-6/)
+O guarda de rota está na pasta `guards` o `auth.guard.ts` ele depende de um serviço de autenticação que contem o token e retorna se o usuário está autenticado ou não a partir daí deixa o usuário navegar.
 
 ## Paths
 
