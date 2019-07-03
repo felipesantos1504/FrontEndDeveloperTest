@@ -8,6 +8,11 @@ Dar clone nesse Projeto e logo após `npm i` para instalar a última versão das
 
 Digite `npm start` para começar. O browser será aberto automaticamente em `http://localhost:4200/`.
 
+## Guard
+
+O guarda de rota está na pasta `guards` ele depende de um serviço de autenticação que contem o token e retorna se o usuário está autenticado ou não a partir daí deixa o usuário navegar.
+
+
 ## HMR
 
 Esse app está configurado para utilizar o HMR (Hot Module Reload) para recarregar apenas os arquivos alterados não fazendo o reload da aplicação toda, assim preservando o seu estado ao alterar arquivos.
@@ -31,7 +36,7 @@ Reinicie sua IDE para certificar de que os paths serão reconhecidos.
 
 ## Proxy
 
-Adicione os end-points da sua api no arquivo `proxy.conf.json` para evitar problemas com CORS (desenvolvimento apenas) neste projeto não é necessário devido ao cors ser liberado na API mas é um recurso interessante.
+Adicione os end-points da sua api no arquivo `proxy.conf.json` para evitar problemas com CORS (desenvolvimento apenas) neste projeto não é necessário devido ao cors ser liberado na API mas é um recurso interessante que está sendo utilizado.
 
 * [Fazendo o CORS seu amigo](https://www.hiago.me/2018/09/08/ionic-angular-fazendo-o-cors-seu-amigo/) - By Hiago.
 * [Proxying to a backend server](https://angular.io/guide/build#proxying-to-a-backend-server) - Angular.io.
@@ -54,23 +59,7 @@ Na raiz do app há um interceptor na pasta `interceptors` o arquivo `custom-http
 
 * [Intercepting-requests-and-responses](https://angular.io/guide/http#intercepting-requests-and-responses) - Angular.io.
 
-## Frameworks CSS
-
-Neste projeto está sendo utilizado o sistema de grid do bootstrap, apenas ele, caso não queira utilizá-lo digite `npm rm bootstrap` e remova o import no arquivo `angular.json`.
-
-* [Docs Bootstrap Grid](https://getbootstrap.com/docs/4.1/layout/grid/) - Grid Docs.
-
-O `normalize.scss` também está sendo utilizado é um reset de alguns elementos que não funcionam corretamente em alguns browsers entre outros, para mais detalhes visitar o repositório.
-
-* [Normalize](https://github.com/necolas/normalize.css) - Repositório normalize.css.
-
-```sh
-  "styles": [
-    "src/styles.scss",
-    "./node_modules/bootstrap/dist/css/bootstrap-grid.min.css",
-    "./node_modules/normalize.css/normalize.css"
-  ],
-```
+Através do interceptor é que adiciono o header de autenticação.
 
 ## Estrutura de Arquivos
 
