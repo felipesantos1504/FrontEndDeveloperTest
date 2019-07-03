@@ -23,7 +23,6 @@ export class CustomHttpInterceptor implements HttpInterceptor {
                 }
             });
         }
-        console.log('Log http interceptor: ', request);
         return next.handle(request).pipe(finalize(() => {
             this._loadingService.hideLoading();
         }));

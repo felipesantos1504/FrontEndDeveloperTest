@@ -11,6 +11,5 @@ export class SharedHttpService {
 
     async postTest() {
         const test = await this._httpClient.get<any>('https://reqres.in/api/users?page=1').toPromise();
-        console.log(test);
     }
 }

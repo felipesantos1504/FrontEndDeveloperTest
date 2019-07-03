@@ -13,7 +13,6 @@ export class UsersService {
         private _usersHttpService: UsersHttpService,
         private _router: Router
     ) {
-        console.log('omg');
     }
 
     deleteUser(id: string | number) {
@@ -25,12 +24,13 @@ export class UsersService {
     async getUser(id: string) {
         try {
             if (this.users) {
+                console.log('Usuário encontrado na memória do serviço não consultando a API!');
+                console.warn('Para realizar o request recarregue a página!');
                 return this.users.data.find(user => {
                     return user.id === +id;
                 });
             } else {
                 const getUser: any = await this._usersHttpService.getUser(id).toPromise();
-                console.log(getUser);
                 return getUser.data;
             }
         } catch (e) {

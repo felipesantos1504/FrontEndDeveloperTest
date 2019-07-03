@@ -37,21 +37,17 @@ export class EditComponent implements OnInit {
             this.userForm.get('email').setValue(this.user.email);
             this.userForm.get('first_name').setValue(this.user.first_name);
             this.userForm.get('last_name').setValue(this.user.last_name);
-            console.log(this.user);
         } catch (e) {
             console.error(e);
         }
     }
 
     async onSubmit($event) {
-        console.log($event);
-        console.log(this.userForm);
         if (this.userForm.valid) {
             try {
                 const update = await this._usersHttpService.updateUser(this.user.id, this.userForm.value).toPromise();
                 this._usersService.updateUser(this.user.id, this.userForm.value);
                 this._location.back();
-                console.log(update);
             } catch (e) {
                 console.error(e);
             }

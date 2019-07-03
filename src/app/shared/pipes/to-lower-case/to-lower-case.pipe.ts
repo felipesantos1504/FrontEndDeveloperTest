@@ -17,7 +17,6 @@ export class ToLowerCasePipe implements PipeTransform {
         return transformed.toLowerCase();
       }
     } catch (e) {
-      console.log('Erro ToLowerCasePipe: ', e);
     }
   }
 

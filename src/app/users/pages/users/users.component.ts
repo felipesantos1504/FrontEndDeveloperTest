@@ -34,7 +34,6 @@ export class UsersComponent implements OnInit {
     const rm = await this._usersHttpService.deleteUser(user.id).toPromise();
     this._usersService.deleteUser(user.id);
     this.users = { ... this._usersService.users };
-    console.log(rm);
   }
 
   edit(user: Data) {
@@ -59,14 +58,11 @@ export class UsersComponent implements OnInit {
         this._usersService.users =
           await this._usersHttpService.getUsers(page).toPromise();
       }
-      console.log(this._usersService.users);
       // Criando uma cópia do objeto
       this.users = { ... this._usersService.users };
-      console.log(this._usersService.users);
       for (let index = 1; index <= this._usersService.users.total_pages; index++) {
         this.usersPages.push(index);
       }
-      console.log(this.usersPages);
       if (this._usersService.users.data.length === 0) {
         this._router.navigateByUrl('/not-found');
         this._usersService.users = null;
