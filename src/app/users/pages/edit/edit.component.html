@@ -1,0 +1,41 @@
+<div class="container">
+    <form class="row" [formGroup]="userForm" (ngSubmit)="onSubmit($event)">
+        <ul class="col-12 list-group">
+            <li class="row list-group-item">
+                <div class="col-2 image">
+                    <img class="rounded-circle" [src]="user?.avatar" alt="user image" *ngIf="user">
+                </div>
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Email" formControlName="email">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="exampleInputFirstName1">Primeiro Nome</label>
+                                <input type="text" class="form-control" id="exampleInputFirstName1"
+                                    aria-describedby="firstNameHelp" placeholder="Primeiro Nome"
+                                    formControlName="first_name">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="exampleInputLastName1">Último Nome</label>
+                                <input type="text" class="form-control" id="exampleInputLastName1"
+                                    aria-describedby="firstNameHelp" placeholder="Último Nome"
+                                    formControlName="last_name">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">
+                        Editar
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </form>
+</div>

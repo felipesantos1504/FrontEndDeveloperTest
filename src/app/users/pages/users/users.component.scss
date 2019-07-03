@@ -1,0 +1,19 @@
+.container {
+    .list-group {
+        .list-group-item {
+            display: flex;
+            align-items: center;
+
+            .buttons {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    .pages {
+        justify-content: center;
+        margin: 20px;
+        display: flex;
+    }
+}
