@@ -67,6 +67,11 @@ export class UsersComponent implements OnInit {
         this.usersPages.push(index);
       }
       console.log(this.usersPages);
+      if (this._usersService.users.data.length === 0) {
+        this._router.navigateByUrl('/not-found');
+        this._usersService.users = null;
+        throw new TypeError('Usuários não encontrados');
+      }
     } catch (e) {
       console.error(e);
     }

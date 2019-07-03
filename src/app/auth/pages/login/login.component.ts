@@ -24,6 +24,9 @@ export class LoginComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        if (localStorage.getItem('token') || this._authService.token) {
+            this._router.navigate(['users'], { queryParams: { page: 1 } });
+        }
         this.loginForm = this._formBuilder.group({
             'email': ['', [Validators.required, Validators.email]],
             'password': ['', [Validators.required, Validators.minLength(6)]]
