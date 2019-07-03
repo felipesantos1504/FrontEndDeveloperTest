@@ -26,8 +26,7 @@ export class UsersComponent implements OnInit {
       if (params.get('page')) {
         this.currentPage = +params.get('page');
       }
-
-    })
+    });
   }
 
   async delete(user: Data) {
@@ -50,8 +49,8 @@ export class UsersComponent implements OnInit {
 
   async ngOnInit() {
     try {
+      let page: any;
       if (!this._usersService.users) {
-        let page: any;
 
         this._activatedRoute.snapshot.queryParamMap.get('page') ? page = this._activatedRoute.snapshot.queryParamMap.get('page') : page = 1;
 
@@ -63,7 +62,7 @@ export class UsersComponent implements OnInit {
       for (let index = 1; index <= this._usersService.users.total_pages; index++) {
         this.usersPages.push(index);
       }
-      if (this._usersService.users.data.length === 0) {
+      if (this._usersService.users.data.length === 0 || page <= 0) {
         this._router.navigateByUrl('/not-found');
         this._usersService.users = null;
         throw new TypeError('Usuários não encontrados');

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-start-app": {
+    "front-end-developer-test": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-start-app",
+            "outputPath": "dist/front-end-developer-test",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -52,20 +52,20 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-start-app:build",
+            "browserTarget": "front-end-developer-test:build",
             "hmr": true,
             "hmrWarning": false
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-start-app:build:production"
+              "browserTarget": "front-end-developer-test:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-start-app:build"
+            "browserTarget": "front-end-developer-test:build"
           }
         },
         "test": {
@@ -99,7 +99,7 @@
         }
       }
     },
-    "ng-start-app-e2e": {
+    "front-end-developer-test-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -107,7 +107,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ng-start-app:serve"
+            "devServerTarget": "front-end-developer-test:serve"
           }
         },
         "lint": {
@@ -122,5 +122,5 @@
       }
     }
   },
-  "defaultProject": "ng-start-app"
+  "defaultProject": "front-end-developer-test"
 }
